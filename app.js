@@ -15,10 +15,11 @@ const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
-
+const compression = require('compression');
 //start express app
 const app = express();
 
+app.use(compression());
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
